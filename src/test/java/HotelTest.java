@@ -55,8 +55,9 @@ public class HotelTest {
     }
 
     @Test
-    public void guestCanBookRoom(){
-
+    public void canCreateBooking(){
+        hotel.createBooking(bedroom1, 5);
+        assertEquals(5.00, hotel.createBooking(bedroom1, 5.00).getNumberOfNights(), 0.01);
     }
 
 }

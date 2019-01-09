@@ -33,16 +33,13 @@ public class Hotel {
         }
     }
 
-    public void isThereFreeRoom(Bedroom bedroom){
-        for (int i = 0; i < this.bedRooms.size(); i++) {
-            bedroomArray = this.bedRooms;
-
-            if(!this.bedRoomsisBedroomFull()){
-                return true;
-            }
-
+    public Booking createBooking(Bedroom bedroom, double numberOfNights) {
+        if(!bedroom.isBedroomFull()){
+            Booking newBooking = new Booking(bedroom, numberOfNights);
+            return newBooking;
+        } else {
+            return null;
         }
-
     }
 
 
