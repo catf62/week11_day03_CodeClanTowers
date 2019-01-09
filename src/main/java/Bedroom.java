@@ -37,11 +37,24 @@ public class Bedroom {
         return nightlyRate;
     }
 
+    public boolean isBedroomFull() {
+        if(this.bedroomGuestCount() >= capacity){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public void addGuestToBedroom(Guest thisGuest){
-        guests.add(thisGuest);
+        if(!this.isBedroomFull()) {
+            guests.add(thisGuest);
+        }
     }
 
     public void ejectGuest(Guest thisGuest) {
         guests.remove(thisGuest);
     }
+
+
+
 }

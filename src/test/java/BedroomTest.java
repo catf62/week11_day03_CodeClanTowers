@@ -52,4 +52,19 @@ public class BedroomTest {
         bedroom1.ejectGuest(guest1);
         assertEquals(0, bedroom1.bedroomGuestCount());
     }
+
+    @Test
+    public void canTestIfRoomEmpty(){
+        assertEquals(false, bedroom1.isBedroomFull());
+    }
+
+    @Test
+    public void canTestIfRoomFull(){
+        bedroom1.addGuestToBedroom(guest1);
+        assertEquals(1, bedroom1.bedroomGuestCount());
+        bedroom1.addGuestToBedroom(guest1);
+        assertEquals(1, bedroom1.bedroomGuestCount());
+        assertEquals(true, bedroom1.isBedroomFull());
+
+    }
 }
